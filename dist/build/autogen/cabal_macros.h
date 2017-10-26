@@ -21,6 +21,27 @@
   (major1) == 0 && (major2) <  5 || \
   (major1) == 0 && (major2) == 5 && (minor) <= 7)
 
+/* package fgl-5.5.3.1 */
+#define VERSION_fgl "5.5.3.1"
+#define MIN_VERSION_fgl(major1,major2,minor) (\
+  (major1) <  5 || \
+  (major1) == 5 && (major2) <  5 || \
+  (major1) == 5 && (major2) == 5 && (minor) <= 3)
+
+/* package graphviz-2999.19.0.0 */
+#define VERSION_graphviz "2999.19.0.0"
+#define MIN_VERSION_graphviz(major1,major2,minor) (\
+  (major1) <  2999 || \
+  (major1) == 2999 && (major2) <  19 || \
+  (major1) == 2999 && (major2) == 19 && (minor) <= 0)
+
+/* package text-1.2.2.2 */
+#define VERSION_text "1.2.2.2"
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 2)
+
 /* tool alex-3.2.1 */
 #define TOOL_VERSION_alex "3.2.1"
 #define MIN_TOOL_VERSION_alex(major1,major2,minor) (\
