@@ -1,7 +1,9 @@
 module Main where
   import Data.Graph
   import Data.Map (Map)
+  import Data.Set (Set)
   import qualified Data.Map as Map
+  import qualified Data.Set as Set
   import Control.Monad (replicateM)
   import Gnomes
   import Color
@@ -13,11 +15,29 @@ module Main where
   main = do
     let colors = Map.unions [ Map.insert x Yellow (Map.fromList [])| x <- [1..10]]
     let graph = buildG (1, 10) $concat [[(a, x)|x<-b]|(a, b)<-peterson]
-    let kColorsGraphs = filter validGraph $generateAllKColorGraphs graph (length $vertices graph) 3
-    let (ColorGraph i c) = head kColorsGraphs
-    --putStrLn $show $edges i
+    let kColorsGraphs = map (\(ColorGraph a b) -> b) $filter validGraph $generateAllKColorGraphs graph (length $vertices graph) 3
+    let setColors = removeDuplicates $map (\x -> Set.fromList (map (\(x, y) -> y) $Map.toList (reverseMap $Map.toList x))) kColorsGraphs
+
+    putStrLn $show $map (\x -> setToColors x [Yellow, Blue, Green, Black]) $map Set.toList setColors
+
     --putStrLn $show $Map.toList c
-    mainGnomes (Map.toList c) (edges i)
+    --mainGnomes (Map.toList c) (edges i)
+    -- let d  = Map.fromList [(a, b) | (a, b) <- [Map.toList c]]
+    -- putStrLn $show $Map.fromList d
+    --putStrLn $show $invert d
+
+  setToColors :: [[Int]] -> [Color] -> Map Int Color
+  setToColors [] _ =
+    Map.fromList []
+  setToColors (x:xs) (y:ys) =
+    Map.unions (setToColors xs ys :[Map.insert xx y (Map.fromList []) | xx <- x])
+
+
+  removeDuplicates [] = []
+  removeDuplicates (x:xs)
+    | x `elem` xs = removeDuplicates xs
+    | otherwise = x : removeDuplicates xs
+
 
   checkNeighbors :: Int -> Graph -> [Int]
   checkNeighbors x graph =
@@ -54,6 +74,13 @@ module Main where
         $map (zip [0..i])
           $replicateM i colors
 
+  reverseMap :: [(Int, Color)] -> Map String [Int]
+  reverseMap [] = Map.fromList []
+  reverseMap ((a, b):xs) = insertReverseMap (reverseMap xs) b a
 
-
+  insertReverseMap :: Map String [Int] -> Color -> Int -> Map String [Int]
+  insertReverseMap map color int =
+    case Map.lookup (show color) map of
+      Nothing ->  Map.insert (show color) [int] map
+      Just n -> Map.insert (show color) (int : n) map
 
