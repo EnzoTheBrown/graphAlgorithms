@@ -1,0 +1,6 @@
+!cabal.sandbox.config
+!ChangeLog.md
+!dist
+!*.dot
+!*.png
+!.idea
