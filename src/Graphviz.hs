@@ -1,7 +1,6 @@
 module Graphviz where
   import Color as C
   import System.Process
-  import Codec.Picture
 
 
   colors = ["white", "brown", "blue", "red"]

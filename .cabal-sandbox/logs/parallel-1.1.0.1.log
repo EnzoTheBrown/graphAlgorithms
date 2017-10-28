@@ -1,0 +1,20 @@
+cabal: Entering directory '/tmp/cabal-tmp-25241/parallel-1.1.0.1'
+Configuring parallel-1.1.0.1...
+Building parallel-1.1.0.1...
+Preprocessing library parallel-1.1.0.1...
+[1 of 2] Compiling Control.Parallel ( Control/Parallel.hs, dist/dist-sandbox-dcb63936/build/Control/Parallel.o )
+
+Control/Parallel.hs:17:1: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+[2 of 2] Compiling Control.Parallel.Strategies ( Control/Parallel/Strategies.hs, dist/dist-sandbox-dcb63936/build/Control/Parallel/Strategies.o )
+
+Control/Parallel/Strategies.hs:65:16: warning: [-Wtabs]
+    Tab character found here, and in 11 further locations.
+    Please use spaces instead.
+Creating package registration file:
+/tmp/pkgConf-parallel-1.1.013691330691125898167.1
+Installing library in
+/home/enzo/prog/haskell/graphAlgorithms/.cabal-sandbox/lib/x86_64-linux-ghc-8.0.2/parallel-1.1.0.1-97YFqIGetED6a9KfqOqrax
+Registering parallel-1.1.0.1...
+cabal: Leaving directory '/tmp/cabal-tmp-25241/parallel-1.1.0.1'

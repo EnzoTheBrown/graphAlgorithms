@@ -1,0 +1,84 @@
+cabal: Entering directory '/tmp/cabal-tmp-25236/graphviz-2999.6.0.0'
+Configuring graphviz-2999.6.0.0...
+Warning: 'ghc-options: -prof' is not necessary and will lead to problems when
+used on a library. Use the configure flag --enable-library-profiling and/or
+--enable-profiling.
+Building graphviz-2999.6.0.0...
+Preprocessing library graphviz-2999.6.0.0...
+[1 of 8] Compiling Data.GraphViz.Types.Internal ( Data/GraphViz/Types/Internal.hs, dist/dist-sandbox-dcb63936/build/Data/GraphViz/Types/Internal.o )
+[2 of 8] Compiling Data.GraphViz.Types.Parsing ( Data/GraphViz/Types/Parsing.hs, dist/dist-sandbox-dcb63936/build/Data/GraphViz/Types/Parsing.o )
+
+Data/GraphViz/Types/Parsing.hs:178:28: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘Char’
+    Suppress this warning by saying ‘_ <- character '.'’
+
+Data/GraphViz/Types/Parsing.hs:188:25: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘Char’
+    Suppress this warning by saying ‘_ <- character 'e'’
+
+Data/GraphViz/Types/Parsing.hs:268:21: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘String’
+    Suppress this warning by saying ‘_ <- string fld’
+
+Data/GraphViz/Types/Parsing.hs:269:21: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘String’
+    Suppress this warning by saying ‘_ <- whitespace'’
+
+Data/GraphViz/Types/Parsing.hs:270:21: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘Char’
+    Suppress this warning by saying ‘_ <- character '='’
+
+Data/GraphViz/Types/Parsing.hs:271:21: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘String’
+    Suppress this warning by saying ‘_ <- whitespace'’
+
+Data/GraphViz/Types/Parsing.hs:301:22: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘String’
+    Suppress this warning by saying ‘_ <- whitespace'’
+
+Data/GraphViz/Types/Parsing.hs:302:22: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘Char’
+    Suppress this warning by saying ‘_ <- parseComma’
+
+Data/GraphViz/Types/Parsing.hs:303:22: warning: [-Wunused-do-bind]
+    A do-notation statement discarded a result of type ‘String’
+    Suppress this warning by saying ‘_ <- whitespace'’
+[3 of 8] Compiling Data.GraphViz.Types.Printing ( Data/GraphViz/Types/Printing.hs, dist/dist-sandbox-dcb63936/build/Data/GraphViz/Types/Printing.o )
+[4 of 8] Compiling Data.GraphViz.Attributes ( Data/GraphViz/Attributes.hs, dist/dist-sandbox-dcb63936/build/Data/GraphViz/Attributes.o )
+
+Data/GraphViz/Attributes.hs:1040:27: error:
+    Ambiguous occurrence ‘empty’
+    It could refer to either ‘Data.GraphViz.Types.Parsing.empty’,
+                             imported from ‘Data.GraphViz.Types.Parsing’ at Data/GraphViz/Attributes.hs:146:1-34
+                             (and originally defined in ‘GHC.Base’)
+                          or ‘Data.GraphViz.Types.Printing.empty’,
+                             imported from ‘Data.GraphViz.Types.Printing’ at Data/GraphViz/Attributes.hs:147:1-35
+                             (and originally defined in ‘Text.PrettyPrint.HughesPJ’)
+
+Data/GraphViz/Attributes.hs:1059:25: error:
+    Ambiguous occurrence ‘empty’
+    It could refer to either ‘Data.GraphViz.Types.Parsing.empty’,
+                             imported from ‘Data.GraphViz.Types.Parsing’ at Data/GraphViz/Attributes.hs:146:1-34
+                             (and originally defined in ‘GHC.Base’)
+                          or ‘Data.GraphViz.Types.Printing.empty’,
+                             imported from ‘Data.GraphViz.Types.Printing’ at Data/GraphViz/Attributes.hs:147:1-35
+                             (and originally defined in ‘Text.PrettyPrint.HughesPJ’)
+
+Data/GraphViz/Attributes.hs:1601:28: error:
+    Ambiguous occurrence ‘empty’
+    It could refer to either ‘Data.GraphViz.Types.Parsing.empty’,
+                             imported from ‘Data.GraphViz.Types.Parsing’ at Data/GraphViz/Attributes.hs:146:1-34
+                             (and originally defined in ‘GHC.Base’)
+                          or ‘Data.GraphViz.Types.Printing.empty’,
+                             imported from ‘Data.GraphViz.Types.Printing’ at Data/GraphViz/Attributes.hs:147:1-35
+                             (and originally defined in ‘Text.PrettyPrint.HughesPJ’)
+
+Data/GraphViz/Attributes.hs:1605:34: error:
+    Ambiguous occurrence ‘empty’
+    It could refer to either ‘Data.GraphViz.Types.Parsing.empty’,
+                             imported from ‘Data.GraphViz.Types.Parsing’ at Data/GraphViz/Attributes.hs:146:1-34
+                             (and originally defined in ‘GHC.Base’)
+                          or ‘Data.GraphViz.Types.Printing.empty’,
+                             imported from ‘Data.GraphViz.Types.Printing’ at Data/GraphViz/Attributes.hs:147:1-35
+                             (and originally defined in ‘Text.PrettyPrint.HughesPJ’)
+cabal: Leaving directory '/tmp/cabal-tmp-25236/graphviz-2999.6.0.0'
