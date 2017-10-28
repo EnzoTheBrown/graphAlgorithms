@@ -7,6 +7,13 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 
+/* package JuicyPixels-3.2.8.3 */
+#define VERSION_JuicyPixels "3.2.8.3"
+#define MIN_VERSION_JuicyPixels(major1,major2,minor) (\
+  (major1) <  3 || \
+  (major1) == 3 && (major2) <  2 || \
+  (major1) == 3 && (major2) == 2 && (minor) <= 8)
+
 /* package base-4.9.1.0 */
 #define VERSION_base "4.9.1.0"
 #define MIN_VERSION_base(major1,major2,minor) (\
@@ -34,6 +41,13 @@
   (major1) <  2999 || \
   (major1) == 2999 && (major2) <  19 || \
   (major1) == 2999 && (major2) == 19 && (minor) <= 0)
+
+/* package process-1.4.3.0 */
+#define VERSION_process "1.4.3.0"
+#define MIN_VERSION_process(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  4 || \
+  (major1) == 1 && (major2) == 4 && (minor) <= 3)
 
 /* package text-1.2.2.2 */
 #define VERSION_text "1.2.2.2"
