@@ -1,5 +1,13 @@
 module Main where
   import Graph
+  import System.Environment
+  import Data.Char
+
+  stringToInt :: String -> Int
+  stringToInt [] = 0
+  stringToInt x = (digitToInt $last x) + 10*(stringToInt $init x)
+
+
 
   petersen = [
     (1, [2, 5, 6]),
@@ -14,5 +22,6 @@ module Main where
     (10, [5, 7, 8])
              ]
   main = do
-    kColorMyGraph petersen
+    args <- getArgs
+    kColorMyGraph petersen $stringToInt $head args
 

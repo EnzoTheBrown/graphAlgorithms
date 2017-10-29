@@ -9,7 +9,7 @@ module Graph where
   import Color
   data ColorGraph = ColorGraph Graph (Map Int Color) deriving (Show)
 
-  kColorMyGraph given = do
+  kColorMyGraph given nb_colors = do
     let colors =
           Map.unions [ Map.insert x Yellow (Map.fromList [])| x <- [1..10]]
     let graph =
@@ -17,7 +17,7 @@ module Graph where
     let kColorsGraphs =
           map (\(ColorGraph a b) -> b)
             $filter validGraph
-              $generateAllKColorGraphs graph (length $vertices graph) 3
+              $generateAllKColorGraphs graph (length $vertices graph) nb_colors
     let setColors =
           removeDuplicates
             $map (\x -> Set.fromList (map (\(x, y) -> y)
