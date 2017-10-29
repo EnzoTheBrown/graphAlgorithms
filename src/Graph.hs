@@ -7,17 +7,26 @@ module Graph where
   import Control.Monad (replicateM)
   import Graphviz
   import Color
+
+
+  -- a color graph is a pair composed of a graph and a map of colors
   data ColorGraph = ColorGraph Graph (Map Int Color) deriving (Show)
 
+
+
   kColorMyGraph given nb_colors = do
+    -- Init all the nodes to Yellow
     let colors =
           Map.unions [ Map.insert x Yellow (Map.fromList [])| x <- [1..10]]
+    -- building the graph
     let graph =
           buildG (1, 10) $concat [[(a, x)|x<-b]|(a, b)<-given]
+    -- building all possible graph, and removing the non valid ones (the ones with 2 neighbors with the same color)
     let kColorsGraphs =
           map (\(ColorGraph a b) -> b)
             $filter validGraph
               $generateAllKColorGraphs graph (length $vertices graph) nb_colors
+    -- [Blue Yellow Yellow] == [Yellow Blue Blue] so we remove those duplicates
     let setColors =
           removeDuplicates
             $map (\x -> Set.fromList (map (\(x, y) -> y)
@@ -27,6 +36,8 @@ module Graph where
           (Map.toList)
               $map (\x -> setToColors x [Yellow, Blue, Green, Black])
                 $map Set.toList setColors
+
+    -- displaying the graphs with graphviz -- work only on kde!!
     sequence [mainGnomes re (edges graph) | re <- take 5 res ]
 
 
